@@ -14,5 +14,6 @@ hof.playerid = master.playerid where hof.inducted = 'Y';
 ## What if we want to look at just hall-of-famers who were born after 1950?
 
 ````sql
-select * from joined_hof where inducted = 'Y' and birthyear > 1950 order by birthyear desc;
+select CONCAT(namefirst, ' ', namelast) as fullname, birthyear,
+inducted, yearid, votedby from joined_hof where inducted = 'Y' and birthyear > 1950 order by birthyear desc;
 ````
