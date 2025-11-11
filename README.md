@@ -1,5 +1,6 @@
-# **MLB Hall of Fame SQL Codes**
+  # :heavy_plus_sign: Now let's combine our name columns using the CONCAT function
 
-Using both the Hall of Fame and Master databases on Kaggle's Baseball Databank, we've created a table in which we can filter for specific HOF baseball players up to 2016.
-
-Files utilized: https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=Master.csv & https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=HallOfFame.csv
+````sql
+select CONCAT(namefirst, ' ', namelast) as fullname, yearid, votedby  from hof left join master on 
+hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
+````
