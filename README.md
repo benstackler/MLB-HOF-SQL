@@ -8,8 +8,8 @@ Using both the Hall of Fame and Master databases on Kaggle's Baseball Databank, 
 
 ## Various SQL Alteration Competencies
 1. :inbox_tray: [Basic Table Creation, Data Import, and Table Joins](https://github.com/benstackler/sqltest/blob/Basic-Data-Import-and-Join/README.md)
-2. :heavy_plus_sign: [Combining Names Using CONCAT](https://github.com/benstackler/sqltest/blob/Combining-Names/HallOfFame.sql)
-3. :ballot_box: [Dividing Integers into Percentages Using Decimals](https://github.com/benstackler/sqltest/blob/Dividing-into-Percentages/HallOfFame.sql)
-4. :handshake: [Saving Joined Queries as New Tables](https://github.com/benstackler/sqltest/blob/Creating-New-Joined-Tables/HallOfFame.sql)
+2. :heavy_plus_sign: [Combining Names Using CONCAT](https://github.com/benstackler/sqltest/blob/Combining-Names/README.md)
+3. :ballot_box: [Dividing Integers into Percentages Using Decimals](https://github.com/benstackler/sqltest/blob/Dividing-into-Percentages/README.md)
+4. :handshake: [Saving Joined Queries as New Tables](https://github.com/benstackler/sqltest/blob/Creating-New-Joined-Tables/README.md)
 
 The above links demonstrate various SQL compentencies in relation to the Hall of Fame and Master databases.
