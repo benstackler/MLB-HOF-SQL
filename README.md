@@ -42,6 +42,7 @@ needed int, votes int, inducted text, category text, needed_note text);
   ````sql
   Select * from HOF;
 ````
+![New HOF Table](https://github.com/benstackler/MLB-HOF-SQL/blob/main/output2.png)
 
 ## Join tables together so that we can find Hall of Fame player profiles inducted after 1990
 
