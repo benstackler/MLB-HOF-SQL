@@ -1,5 +1,18 @@
-# **MLB Hall of Fame SQL Codes**
+# :handshake: Creating New Tables from Joined Queries
 
-Using both the Hall of Fame and Master databases on Kaggle's Baseball Databank, we've created a table in which we can filter for specific HOF baseball players up to 2016.
+## Can we create a new table that permanently combines our joined tables?
 
-Files utilized: https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=Master.csv & https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=HallOfFame.csv
+````sql
+Create table joined_hof as 
+Select hof.*, master.playerid as masterplayerid, master.namefirst, master.namelast,
+master.weight, master.height, master.birthyear from hof left join master on 
+hof.playerid = master.playerid where hof.inducted = 'Y';
+````
+
+#### Note: must differentiate the key column (i.e. playerid) by renaming it for one of the tables being joined
+
+## What if we want to look at just hall-of-famers who were born after 1950?
+
+````sql
+select * from joined_hof where inducted = 'Y' and birthyear > 1950 order by birthyear desc;
+````
