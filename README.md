@@ -10,5 +10,5 @@ AS approval_percentage  from hof left join master on
 hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
 ````
 
-## New Query Result with Induction Percentages
+### New Query Result with Induction Percentages
 ![percentage_table](https://github.com/benstackler/MLB-HOF-SQL/blob/main/percentages.png)
