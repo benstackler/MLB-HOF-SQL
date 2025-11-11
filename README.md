@@ -12,5 +12,6 @@ We explore various SQL concepts utilizing Kaggle's MLB Master and HOF player dat
 3. :ballot_box: [Dividing Integers into Percentages Using Decimals](https://github.com/benstackler/sqltest/blob/Dividing-into-Percentages/README.md)
 4. :handshake: [Saving Joined Queries as New Tables](https://github.com/benstackler/sqltest/blob/Creating-New-Joined-Tables/README.md)
 5. :window: [Creating New Views](https://github.com/benstackler/MLB-HOF-SQL/blob/Creating-New-Views/README.md)
+6. :magic_wand: [Creating CTEs](https://github.com/benstackler/MLB-HOF-SQL/blob/Creating-CTEs/README.md)
 
 The above links demonstrate various SQL compentencies in relation to the Hall of Fame and Master databases.
