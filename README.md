@@ -1,5 +1,10 @@
-# **MLB Hall of Fame SQL Codes**
+# :ballot_box: Dividing into Percentages Using Decimals
 
-Using both the Hall of Fame and Master databases on Kaggle's Baseball Databank, we've created a table in which we can filter for specific HOF baseball players up to 2016.
+### Let's add the percentage of votes received by each HOF inductee (approval percentage) by converting our integers into decimals, rounding, and ensuring zero ballot cases do not cause errors
 
-Files utilized: https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=Master.csv & https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=HallOfFame.csv
+````sql
+select CONCAT(namefirst, ' ', namelast) as fullname, yearid, votedby, 
+ ROUND(CAST(votes AS DECIMAL(10,2)) / NULLIF(ballots, 0) * 100, 2)
+AS approval_percentage  from hof left join master on 
+hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
+````
