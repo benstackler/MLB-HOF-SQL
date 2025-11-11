@@ -46,4 +46,3 @@ select * from hof left join master on hof.playerid = master.playerid where hof.i
 
  select CONCAT(namefirst, ' ', namelast) as fullname, yearid, votedby  from hof left join master on 
 hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
-hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
