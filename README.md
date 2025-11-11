@@ -21,6 +21,7 @@ debut date, finalgame date, retroid text, bbrefid text);
 ````sql
 Select * from master;
 ````
+### New Master Table
 ![New Master Table](https://github.com/benstackler/MLB-HOF-SQL/blob/main/output1.png)
 
 ## Creating Necessary Table - HOF
@@ -42,6 +43,8 @@ needed int, votes int, inducted text, category text, needed_note text);
   ````sql
   Select * from HOF;
 ````
+
+### New HOF Table
 ![New HOF Table](https://github.com/benstackler/MLB-HOF-SQL/blob/main/output2.png)
 
 ## Join tables together so that we can find Hall of Fame player profiles inducted after 1990
@@ -50,4 +53,6 @@ needed int, votes int, inducted text, category text, needed_note text);
 select * from hof left join master on hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990
 order by yearid desc;
 ````
+
+### New Merged Table
 ![New Merged Table](https://github.com/benstackler/MLB-HOF-SQL/blob/main/output3.png)
