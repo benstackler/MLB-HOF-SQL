@@ -1,4 +1,4 @@
-# Basic Table Creation, Data Import, and Join
+# :inbox_tray: Basic Table Creation, Data Import, and Join
 ## Creating Necessary Table - Master
 
 ```Create table master (playerID text, birthyear int, birthmonth int, birthday int, birthcountry text, birthstate text, birthcity text, deathyear int, deathmonth int, deathday int, deathcountry text, deathstate text, deathcity text, namefirst text, namelast text, namegiven text, weight int, height int, bats text, throws text, debut date, finalgame date, retroid text, bbrefid text);```
