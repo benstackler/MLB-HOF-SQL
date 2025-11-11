@@ -17,3 +17,5 @@ hof.playerid = master.playerid where hof.inducted = 'Y';
 select CONCAT(namefirst, ' ', namelast) as fullname, birthyear,
 inducted, yearid, votedby from joined_hof where inducted = 'Y' and birthyear > 1950 order by birthyear desc;
 ````
+### Joined Table Query Result
+![joinedquery](https://github.com/benstackler/MLB-HOF-SQL/blob/main/Screen%20Shot%202025-11-11%20at%204.02.39%20PM.png)
