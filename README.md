@@ -7,7 +7,6 @@ birthcity text, deathyear int, deathmonth int, deathday int, deathcountry text, 
 namefirst text, namelast text, namegiven text, weight int, height int, bats text, throws text,
 debut date, finalgame date, retroid text, bbrefid text);
 ````
-![New Master Table](output1.png)
 
 ## Importing Kaggle Dataset - Master
 1. Tables
@@ -22,6 +21,7 @@ debut date, finalgame date, retroid text, bbrefid text);
 ````sql
 Select * from master;
 ````
+![New Master Table](https://github.com/benstackler/MLB-HOF-SQL/blob/main/output1.png)
 
 ## Creating Necessary Table - HOF
 
