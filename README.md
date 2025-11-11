@@ -1,15 +1,35 @@
-# :baseball: MLB Hall of Fame SQL Codes 
+# Basic Table Creation, Data Import, and Join
+## Creating Necessary Table - Master
 
-Using both the Hall of Fame and Master databases on Kaggle's Baseball Databank, we've created a table in which we can filter for specific HOF baseball players up to 2016.
+```Create table master (playerID text, birthyear int, birthmonth int, birthday int, birthcountry text, birthstate text, birthcity text, deathyear int, deathmonth int, deathday int, deathcountry text, deathstate text, deathcity text, namefirst text, namelast text, namegiven text, weight int, height int, bats text, throws text, debut date, finalgame date, retroid text, bbrefid text);```
 
-## Files utilized: 
-1. 	[Kaggle Master Baseball Database](https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=Master.csv)
-2.  [Kaggle Hall of Fame Baseball Database](https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=HallOfFame.csv)
+## Importing Kaggle Dataset - Master
+1. Tables
+2. "Master"
+3. Import/Export data
+4. "Master.csv"
+5. "Header" - checked
+6. "Delimiter" - comma
 
-## Various SQL Alteration Competencies
-1. :inbox_tray: [Basic Table Creation, Data Import, and Table Joins](https://github.com/benstackler/sqltest/blob/main/HallOfFame.sql)
-2. :heavy_plus_sign: [Combining Names Using CONCAT](https://github.com/benstackler/sqltest/blob/Combining-Names/HallOfFame.sql)
-3. :ballot_box: [Dividing Integers into Percentages Using Decimals](https://github.com/benstackler/sqltest/blob/Dividing-into-Percentages/HallOfFame.sql)
-4. :handshake: [Saving Joined Queries as New Tables](https://github.com/benstackler/sqltest/blob/Creating-New-Joined-Tables/HallOfFame.sql)
+## Checking Your Import - Master
 
-The above links demonstrate various SQL compentencies in relation to the Hall of Fame and Master databases.
+```Select * from master;```
+
+## Creating Necessary Table - HOF
+
+```Create table HOF (playerid text, yearid int, votedby text, ballots int, needed int, votes int, inducted text, category text, needed_note text);```
+
+## Importing Kaggle Dataset - HOF
+1. Tables
+2. "HOF"
+3. Import/Export data
+4. "HallofFame.csv"
+5. "Header" - checked
+6. "Delimiter" - comma
+
+## Checking Your Import - HOF
+  ```Select * from HOF;```
+
+## Join tables together so that we can find Hall of Fame player profiles inducted after 1990
+
+```select * from hof left join master on hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;```
