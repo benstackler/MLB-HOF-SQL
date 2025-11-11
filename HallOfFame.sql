@@ -34,5 +34,11 @@ inducted text, category text, needed_note text);
 # Checking Your Import - HOF
   Select * from HOF;
 
+# Join tables together so that we can find Hall of Fame player profiles inducted after 1990
 
-select * from hof left join players on hof.playerid = players.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
+select * from hof left join master on hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
+
+# Let's limit our results to player name, year, and voting committee
+
+ Select namefirst, namelast, yearid, votedby  from hof left join master on 
+hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
