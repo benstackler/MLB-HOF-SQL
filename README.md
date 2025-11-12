@@ -30,8 +30,21 @@ select * from combined_batting;
 Create table hr_sorted as
 select playerid, coalesce(g, 0) as games, coalesce(ab, 0) as at_bats, coalesce(r, 0) as runs,
 coalesce(h, 0) as hits, coalesce(doubles, 0) as doubles, coalesce(triples, 0) as triples, coalesce(hrs, 0) as homers, 
-coalesce(rbis, 0) as rbi, coalesce(so_count) as so from batting2 order by homers desc;
+coalesce(rbis, 0) as rbi, coalesce(so_count,0) as so from batting2 order by homers desc;
 ````
 
 ### New Table with Sorted HRs
 ![sorted](https://github.com/benstackler/MLB-HOF-SQL/blob/main/HRs%20sorted.png)
+
+## Adding Player Names
+
+It's hard to read our table because it only contains player_id. Let's link it back to our original table using a join function.
+````sql
+Create table joined_batting as 
+Select hr_sorted.*, master.playerid as masterplayerid, master.namefirst, master.namelast, 
+master.weight, master.height, master.birthyear 
+from hr_sorted left join master on 
+hr_sorted.playerid = master.playerid order by hr_sorted.homers desc;
+````
+### Final Table with Player Names
+![newtable]https://github.com/benstackler/MLB-HOF-SQL/blob/main/new%20table.png
