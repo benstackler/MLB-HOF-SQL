@@ -3,8 +3,9 @@
 We explore various SQL concepts utilizing Kaggle's MLB Master and HOF player databases (data up to 2016).
 
 ## Files utilized: 
-1. 	[Kaggle Master Baseball Database](https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=Master.csv)
-2.  [Kaggle Hall of Fame Baseball Database](https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=HallOfFame.csv)
+1. 	[Kaggle Master Baseball Dataset](https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=Master.csv)
+2.  [Kaggle Hall of Fame Baseball Dataset](https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=HallOfFame.csv)
+3.  [Kaggle Batting Dataset](https://www.kaggle.com/datasets/open-source-sports/baseball-databank?select=Batting.csv)
 
 ## Beginner SQL Alteration Competencies
 1. :inbox_tray: [Basic Table Creation, Data Import, and Table Joins](https://github.com/benstackler/sqltest/blob/Basic-Data-Import-and-Join/README.md)
