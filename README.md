@@ -1,20 +1,37 @@
-# :window: Creating New Views
+# :open_hands: Creating Aggregate Functions Using Group By
 
-## Can we create a new view that will serve as a query shortcut for hall of fame players?
+## What if we want to query all players by career home runs?
+We download the "Batting" database, which has batting information sorted by player, season, and team. This means we must query the data to group it by player (in order to get a career-level view).
 
-We start out by creating a new view that will give us HOF players born after 1890, with combined first and last names.
+Currently, the data is a mess and we cannot meaningfully sort through the statistics.
 
-````sql
-CREATE VIEW hof_player_view AS
-SELECT CONCAT(namefirst, ' ', namelast), playerid, birthyear, weight, height
-FROM joined_hof
-WHERE birthyear > 1890;
-````
+![unsorted](https://github.com/benstackler/MLB-HOF-SQL/blob/main/HRs%20unsorted.png)
 
-## Now we want to double-check our results and also order by birth year.
+### First we sum all of the career statistics, to allow us to group by the player's ID.
 
 ````sql
-select * from hof_player_view order by birthyear asc;
+CREATE view combined_batting AS
+SELECT playerid, sum(g) as g, sum(ab) as ab, sum(r) as r, sum(h) as h, sum(double) as doubles, sum(triple) as triples, 
+sum(hr) as HRs, sum(rbi) as rbis, sum(sb) as sb_count, sum(cs) as cs_count, 
+sum(bb) as bb_count, sum(so) as so_count, sum(ibb) as ibb_count, sum(hbp) as hbp_count, 
+sum(sh) as sh_count, sum(sf) as sf_count, sum(gidp) as gidp_count from batting 
+group by playerid;
 ````
-### New View Query Result
-![newview](https://github.com/benstackler/MLB-HOF-SQL/blob/main/view1.png))
+
+### Then we create a new table using these query results (once validated).
+
+
+````sql
+create table batting2 as 
+select * from combined_batting;
+````
+### We then replace null values with '0' to allow us to sort.
+````sql
+Create table hr_sorted as
+select playerid, coalesce(g, 0) as games, coalesce(ab, 0) as at_bats, coalesce(r, 0) as runs,
+coalesce(h, 0) as hits, coalesce(doubles, 0) as doubles, coalesce(triples, 0) as triples, coalesce(hrs, 0) as homers, 
+coalesce(rbis, 0) as rbi, coalesce(so_count) as so from batting2 order by homers desc;
+````
+
+### New Table with Sorted HRs
+![sorted](https://github.com/benstackler/MLB-HOF-SQL/blob/main/HRs%20sorted.png)
